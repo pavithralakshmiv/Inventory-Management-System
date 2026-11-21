@@ -1,0 +1,19 @@
+package com.inventory.repository;
+
+import com.inventory.entity.Customer;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+
+    boolean existsByEmailIgnoreCase(String email);
+
+    boolean existsByEmailIgnoreCaseAndIdNot(String email, Long id);
+
+    @Query("select c from Customer c where lower(c.name) like lower(concat('%', :q, '%')) "
+            + "or lower(c.mobile) like lower(concat('%', :q, '%')) "
+            + "or lower(coalesce(c.email, '')) like lower(concat('%', :q, '%')) order by c.id")
+    List<Customer> search(@Param("q") String q);
+}

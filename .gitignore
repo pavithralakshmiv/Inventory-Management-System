@@ -1,0 +1,27 @@
+# Maven
+target/
+
+# User uploads
+uploads/*
+!uploads/.gitkeep
+
+# Database backups
+database/*.sql
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Operating system files
+.DS_Store
+Thumbs.db

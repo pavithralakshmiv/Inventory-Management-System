@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Current Stock - Inventory Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+<div id="nav"></div>
+<div class="panel"><h1 class="panel-title">Current Stock</h1>
+<div class="toolbar"><input type="text" class="grow" id="searchBox" placeholder="Search product, code or category">
+<select id="statusFilter"><option value="">All Stock Statuses</option><option>Available</option><option>Low Stock</option><option>Out of Stock</option></select>
+<button type="button" class="btn" id="btnSearch">🔍 Search</button><button type="button" class="btn" id="btnRefresh">🔃 Refresh</button>
+<button type="button" class="btn" id="btnMoves">📜 Movement History</button><button type="button" class="btn" id="btnClose">❌ Close</button></div>
+<div class="table-wrap"><table class="grid"><thead><tr><th>Product ID</th><th>Code</th><th>Product</th><th>Category</th><th class="num">Available Qty</th><th class="num">Purchase Price</th><th class="num">Selling Price</th><th>Stock Status</th></tr></thead><tbody id="tbody"></tbody></table></div>
+<p class="small">Select a row and press Movement History to see every stock change for that product. Leave nothing selected to see the latest movements for all products.</p></div>
+</div>
+<div id="toast"></div>
+<script src="js/common.js"></script>
+<script src="js/stock.js"></script>
+</body>
+</html>

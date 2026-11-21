@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports - Inventory Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+<div id="nav"></div>
+<div class="panel"><h1 class="panel-title">Reports</h1>
+<div class="toolbar"><select id="reportType"><option value="sales">Sales Report</option><option value="purchases">Purchase Report</option><option value="stock">Stock Report</option><option value="products">Product Report</option><option value="customers">Customer Report</option><option value="suppliers">Supplier Report</option><option value="orders">Order Report</option><option value="summary">Summary Report</option></select>
+<label class="lbl" style="margin:0">From</label><input type="date" id="fromDate"><label class="lbl" style="margin:0">To</label><input type="date" id="toDate">
+<input type="text" class="grow" id="searchBox" placeholder="Search within report">
+<button type="button" class="btn" id="btnGenerate">📊 Generate</button><button type="button" class="btn" id="btnPdf">📄 Export PDF</button><button type="button" class="btn" id="btnExcel">📗 Export Excel</button><button type="button" class="btn" id="btnClose">❌ Close</button></div>
+<h2 class="panel-sub" id="reportTitle"></h2>
+<div class="table-wrap"><table class="grid"><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+<div class="box mt hidden" id="chartBox"><h3 id="chartTitle"></h3><div class="chart-box"><canvas id="reportChart"></canvas></div></div></div>
+</div>
+<div id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>

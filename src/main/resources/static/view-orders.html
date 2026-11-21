@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>View Orders - Inventory Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+<div id="nav"></div>
+<div class="panel"><h1 class="panel-title">View Orders</h1>
+<div class="toolbar"><input type="text" class="grow" id="searchBox" placeholder="Search order, customer or product">
+<select id="statusFilter"><option value="">All Statuses</option><option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option></select>
+<label class="lbl" style="margin:0">From</label><input type="date" id="fromDate"><label class="lbl" style="margin:0">To</label><input type="date" id="toDate">
+<button type="button" class="btn" id="btnSearch">🔍 Search</button><button type="button" class="btn" id="btnRefresh">🔃 Refresh</button></div>
+<div class="table-wrap"><table class="grid"><thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Product Details</th><th class="num">Qty</th><th class="num">Total</th><th>Payment</th><th>Status</th></tr></thead><tbody id="tbody"></tbody></table></div>
+<div class="toolbar mt"><button type="button" class="btn" id="btnView">👁️ View Details</button>
+<select id="newStatus"><option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option></select><button type="button" class="btn" id="btnStatus">✔️ Update Status</button>
+<select id="newPayment"><option>Unpaid</option><option>Paid</option><option>Partial</option></select><button type="button" class="btn" id="btnPayment">💳 Update Payment</button>
+<button type="button" class="btn" id="btnClose">❌ Close</button></div></div>
+</div>
+<div id="toast"></div>
+<script src="js/common.js"></script>
+<script src="js/view-orders.js"></script>
+</body>
+</html>

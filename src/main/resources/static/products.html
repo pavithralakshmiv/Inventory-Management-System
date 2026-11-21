@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manage Products - Inventory Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+<div id="nav"></div>
+<div class="panel"><h1 class="panel-title">Manage Products</h1><div class="split"><div><div class="toolbar"><input type="text" class="grow" id="searchBox" placeholder="Search..."><button type="button" class="btn" id="btnSearch">🔍 Search</button><button type="button" class="btn" id="btnRefresh">🔃 Refresh</button><select id="filterCategory"><option value="">All Categories</option></select></div><div class="table-wrap"><table class="grid"><thead><tr><th>ID</th><th>Image</th><th>Code</th><th>Name</th><th>Category</th><th>Supplier</th><th>Purchase</th><th>Selling</th><th>Qty</th><th>Stock</th></tr></thead><tbody id="tbody"></tbody></table></div></div><form id="entityForm" class="split-form" novalidate><div class="preview-box" id="previewBox">No image</div><div class="field"><label>Product Image</label><input type="file" id="imageFile" accept="image/png,image/jpeg,image/gif,image/webp"><input type="hidden" id="imagePath"></div><div class="field-row"><div class="field"><label>Product Code</label><input type="text" id="productCode" required maxlength="50"></div><div class="field"><label>Brand</label><input type="text" id="brand" maxlength="100"></div></div><div class="field"><label>Product Name</label><input type="text" id="name" required maxlength="150"></div><div class="field"><label>Category</label><select id="categoryId" required></select></div><div class="field"><label>Supplier</label><select id="supplierId"></select></div><div class="field-row"><div class="field"><label>Purchase Price</label><input type="number" id="purchasePrice" required min="0" step="0.01"></div><div class="field"><label>Selling Price</label><input type="number" id="sellingPrice" required min="0" step="0.01"></div></div><div class="field-row"><div class="field"><label>Quantity</label><input type="number" id="quantity" required min="0" step="1" value="0"></div><div class="field"><label>Date</label><input type="date" id="productDate" ></div></div><div class="field"><label>Description</label><textarea id="description" maxlength="500"></textarea></div><div class="field"><label>Status</label><select id="status" required><option value="Active">Active</option><option value="Inactive">Inactive</option></select></div><div class="btn-row"><button type="button" class="btn" id="btnSave">💾 Save</button><button type="button" class="btn" id="btnUpdate">✏️ Update</button><button type="button" class="btn" id="btnReset">🔄 Reset</button><button type="button" class="btn" id="btnDelete">🗑️ Delete</button><button type="button" class="btn" id="btnClose">❌ Close</button></div></form></div></div>
+</div>
+<div id="toast"></div>
+<script src="js/common.js"></script>
+<script src="js/products.js"></script>
+</body>
+</html>
